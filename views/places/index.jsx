@@ -8,13 +8,16 @@ function places (data) {
             <div className="col-sm-6">
                 <h2>{place.name}</h2>
 
-                <p className="text-center">
+                <p>
                     {place.cuisines}
                 </p>
                 
                 <img src={place.pic} alt={place.name} height="350vh" />
+                <div>
+                    Photo by <a href={place.photoByLink}>{place.photoBy}</a> on <a href={place.onLink}>Unsplash</a>
+                </div>
 
-                <p className="text-center">
+                <p>
                     Located in {place.city}, {place.state}
                 </p>
             </div>
@@ -23,7 +26,7 @@ function places (data) {
 
     return (
         <Def>
-            <main>
+            <main className="text-center">
                 <h1>Places to Rant or Rave About</h1>
 
                 <div className="row">
