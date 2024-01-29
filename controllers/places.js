@@ -3,6 +3,7 @@ const router = require('express').Router();
 
 // Post /places
 router.post('/', (req, res) => {
+  console.log(req.body);
   res.send('Post place');
 });
 
