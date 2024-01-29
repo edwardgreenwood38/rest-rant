@@ -4,8 +4,23 @@ const places = require('../models/places.js');
 
 // Post /places
 router.post('/', (req, res) => {
-  console.log(req.body);
-  res.send('Post place');
+  
+  if (!req.body.pic) {
+    // default image
+    req.body.pic = 'http://placekitten.com/400/400';
+  }
+
+  if (!req.body.city) {
+    req.body.city = 'Anytown';
+  }
+
+  if (!req.body.state) {
+    req.body.state = 'USA';
+  }
+
+  places.push(req.body);
+
+  res.redirect('/places');
 });
 
 
