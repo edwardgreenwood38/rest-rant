@@ -12,7 +12,7 @@ function places (data) {
                     {place.cuisines}
                 </p>
                 
-                <img src={place.pic} alt={place.name} height="350vh" />
+                <img src={place.pic} alt={place.name} height="250vh" />
                 <div>
                     Photo by <a href={place.photoByLink}>{place.photoBy}</a> on <a href={place.onLink}>Unsplash</a>
                 </div>
