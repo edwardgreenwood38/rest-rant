@@ -3,7 +3,7 @@ const places = require('../models/places.js');
 
 
 // Post /places
-router.delete('/:id', (req, res) => {
+router.delete('/places/:id', (req, res) => {
   let id = Number(req.params.id);
 
   if (isNaN(id)) {
@@ -13,8 +13,9 @@ router.delete('/:id', (req, res) => {
     res.render('error404');
   }
   else {
-    places.splice(id, 1);
-    res.redirect('/places');
+    res.send('STUB DELETE places/:id')
+    // places.splice(id, 1);
+    // res.redirect('/places');
   }
 });
 
@@ -46,7 +47,7 @@ router.get('/new', (req, res) => {
   res.render('places/new');
 });
 
-
+// GET show
 router.get('/:id', (req, res) => {
   let id = Number(req.params.id);
 
