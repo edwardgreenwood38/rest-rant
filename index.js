@@ -2,7 +2,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const methodOverride = required('method-override');
+const methodOverride = require('method-override');
 
 
 // Express Settings
