@@ -2,24 +2,6 @@ const router = require('express').Router();
 const places = require('../models/places.js');
 
 
-// Post /places
-router.delete('/places/:id', (req, res) => {
-  let id = Number(req.params.id);
-
-  if (isNaN(id)) {
-    res.render('error404');
-  }
-  else if (!places[id]) {
-    res.render('error404');
-  }
-  else {
-    res.send('STUB DELETE places/:id')
-    // places.splice(id, 1);
-    // res.redirect('/places');
-  }
-});
-
-
 router.post('/', (req, res) => {
   
   if (!req.body.pic) {
@@ -39,7 +21,6 @@ router.post('/', (req, res) => {
 
   res.redirect('/places');
 });
-
 
 
 // GET /places
@@ -67,6 +48,25 @@ router.get('/:id', (req, res) => {
 router.get('/', (req, res) => {    
     res.render('places/index', { places })
   });
+
+
+// Post /places
+router.delete('/:id', (req, res) => {
+  let id = Number(req.params.id);
+
+  if (isNaN(id)) {
+    res.render('error404');
+  }
+  else if (!places[id]) {
+    res.render('error404');
+  }
+  else {
+    places.splice(id, 1);
+    res.redirect('/places');
+    // places.splice(id, 1);
+    
+  }
+});
 
 
 module.exports = router;
