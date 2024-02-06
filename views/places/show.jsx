@@ -3,6 +3,7 @@ const Def = require('../default')
 
 
 function show (data) {
+    console.log(data);
     return (
         <Def>
           <main className="container">

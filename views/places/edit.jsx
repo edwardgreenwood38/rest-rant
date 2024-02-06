@@ -4,12 +4,14 @@ const Def = require('../default.jsx');
 
 
 function edit_form (data) {
-    return (
+  console.log(data);
+
+  return (
         <Def>
           <main>
                 <h1>Edit Place</h1>
 
-                <form action={`/places/${data.place.id}?_method=PUT`} method="POST">
+                <form action={`/places/${data.id}?_method=PUT`} method="POST">
                     <div className="row">
                       <div className="form-group col-md-6">
                           <label htmlFor="name">Place Name</label>
@@ -18,22 +20,22 @@ function edit_form (data) {
 
                       <div className="form-group col-md-6">
                           <label htmlFor="pic">Pic URL</label>
-                          <input type="url" id="pic" name="pic" className="form-control" />
+                          <input type="url" id="pic" name="pic" className="form-control" value={data.place.pic} />
                       </div>
 
                       <div className="form-group col-md-6">
                           <label htmlFor="city">City</label>
-                          <input id="city" name="city" className="form-control" />
+                          <input id="city" name="city" className="form-control" value={data.place.city} />
                       </div>
 
                       <div className="form-group col-md-6">
                           <label htmlFor="state">State</label>
-                          <input id="state" name="state" className="form-control" />
+                          <input id="state" name="state" className="form-control" value={data.place.state} />
                       </div>
 
                       <div className="form-group">
                           <label htmlFor="cuisines">Cuisines</label>
-                          <input id="cuisines" name="cuisines" className="form-control" required />
+                          <input id="cuisines" name="cuisines" className="form-control" value={data.place.cuisines} required />
                       </div>
                     </div>
                     
