@@ -36,8 +36,16 @@ router.get('/new', (req, res) => {
 
 // show
 router.get('/:id', (req, res) => {
-  res.send('GET /places/:id stub')
-})
+  //console.log(req.params.id);
+  db.Place.findById(req.params.id)
+    .then(place => {
+      res.render('places/show', { place })
+    })
+    .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+    })
+});
 
 // update
 router.put('/:id', (req, res) => {
