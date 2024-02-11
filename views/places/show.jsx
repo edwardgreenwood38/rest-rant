@@ -17,7 +17,7 @@ function show (data) {
 
                     <p>Rating: currently unrated</p>
 
-                    <p>Location: {data.place.city}, {data.place.state}</p>
+                    <h3>{data.place.showEstablished()}</h3>
 
                     <a href={`/places/${data.id}/edit`} className="btn btn-warning">Edit</a>
                     <form action={`/places/${data.id}?_method=DELETE`} method="POST">
@@ -27,6 +27,7 @@ function show (data) {
 
                 <div className="col-8">
                     <img src={data.place.pic} alt={`${data.place.pic}`} height="400vh" />
+                    <h3>Location: {data.place.city}, {data.place.state}</h3>
                 </div>
             </div>
 

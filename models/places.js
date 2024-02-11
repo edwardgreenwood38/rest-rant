@@ -13,6 +13,13 @@ const placeSchema = new mongoose.Schema({
 });
 
 
+// helper method
+placeSchema.methods.showEstablished = function() {
+  return `${this.name} has been serving ${this.city}, ${this.state} since ${this.founded}.`
+}
+
+
+
 // export model
 module.exports = mongoose.model('Place', placeSchema);
 
