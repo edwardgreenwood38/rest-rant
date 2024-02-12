@@ -3,7 +3,7 @@ const Def = require('../default')
 
 
 function show (data) {
-    //console.log(data);
+    console.log(data);
     let comments = (
         <h3 className="inactive">
             No comments yet!
@@ -55,6 +55,8 @@ function show (data) {
 
             <div>
                 <h3>Comments</h3>
+
+                <a href={`/places/${data.id}/comment`} className="btn btn-primary">Add comment</a>
                 {comments}
             </div>
           </main>
