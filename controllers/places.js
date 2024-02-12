@@ -94,7 +94,7 @@ router.delete('/:id/rant/:rantId', (req, res) => {
 
 
 // get comment
-router.get('/comment/:id', (req, res) => {
+router.get('/:id/comment', (req, res) => {
   let id = req.params.id;
   console.log(id)
 

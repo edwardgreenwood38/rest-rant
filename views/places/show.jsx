@@ -56,7 +56,7 @@ function show (data) {
             <div>
                 <h3>Comments</h3>
 
-                <a href={`/comment/${data.id}`} className="btn btn-primary">Add comment</a>
+                <a href={`/${data.id}/comment`} className="btn btn-primary">Add comment</a>
                 {comments}
             </div>
           </main>
