@@ -2,13 +2,13 @@ const React = require('react')
 const Def = require('../default')
 
 
-function comment(data) {
+function comment() {
     return (
         <Def>
             <main className="container">
                 <h2>Add Comment</h2>
 
-                <form action={`/places/${data.id}/comment`} method="POST">
+                <form action={`/places/comment`} method="POST">
                     <div className="form-group">
                         <label htmlFor="author">Author</label>
                         <input id="author" name="author" className="form-control" />
