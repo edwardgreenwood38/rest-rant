@@ -53,11 +53,13 @@ router.get('/new', (req, res) => {
 // show
 router.get('/:id', (req, res) => {
   //console.log(req.params.id);
+  let id = req.params.id;
+
   db.Place.findById(req.params.id)
     .populate('comments')
     .then(place => {
       console.log(place.comments)
-      res.render('places/show', { place })
+      res.render('places/show', { place, id })
     })
     .catch(err => {
       console.log('err', err)
@@ -93,12 +95,15 @@ router.delete('/:id/rant/:rantId', (req, res) => {
 
 // get comment
 router.get('/:id/comment', (req, res) => {
-  res.render('comment')
+  let id = req.params.id;
+  console.log(id)
+
+  res.render('places/comment', id)
 })
 
 // post comment
 router.post('/:id/comment', (req, res) => {
-  console.log(req.body)
+  //console.log(req.body)
   req.body.rant = req.body.rant ? true : false
 
   db.Place.findById(req.params.id)

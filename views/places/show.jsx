@@ -3,7 +3,7 @@ const Def = require('../default')
 
 
 function show (data) {
-    console.log(data);
+    //console.log(data);
     let comments = (
         <h3 className="inactive">
             No comments yet!
