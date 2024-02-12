@@ -58,7 +58,7 @@ router.get('/:id', (req, res) => {
   db.Place.findById(req.params.id)
     .populate('comments')
     .then(place => {
-      console.log(place.comments)
+      // console.log(place.comments)
       res.render('places/show', { place, id })
     })
     .catch(err => {
@@ -94,11 +94,11 @@ router.delete('/:id/rant/:rantId', (req, res) => {
 
 
 // get comment
-router.get('/:id/comment', (req, res) => {
+router.get('/comment/:id', (req, res) => {
   let id = req.params.id;
   console.log(id)
 
-  res.render('places/comment', id)
+  res.render('comment', id)
 })
 
 // post comment

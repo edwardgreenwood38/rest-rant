@@ -10,7 +10,7 @@ function show (data) {
         </h3>
     )
 
-    if (data.place.comments.length) {
+    if (data.place.comments.length > 0) {
         comments = data.place.comments.map(c => {
             return (
                 <div className="border">
@@ -56,7 +56,7 @@ function show (data) {
             <div>
                 <h3>Comments</h3>
 
-                <a href={`/places/${data.id}/comment`} className="btn btn-primary">Add comment</a>
+                <a href={`/comment/${data.id}`} className="btn btn-primary">Add comment</a>
                 {comments}
             </div>
           </main>
